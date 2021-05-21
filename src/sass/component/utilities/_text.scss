@@ -1,0 +1,86 @@
+// stylelint-disable declaration-no-important
+
+//
+// Text
+//
+
+// .txt-monospace { font-family: $font-family-monospace !important; }
+
+// Alignment
+
+.txt-justify  { text-align: justify !important; }
+.txt-wrap     { white-space: normal !important; }
+.txt-nowrap   { white-space: nowrap !important; }
+.txt-truncate { @include text-truncate(); }
+
+// Responsive alignment
+
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+$text-align: true;
+@mixin text-align($infix){
+  .txt#{$infix}-left   { text-align: left !important; }
+  .txt#{$infix}-right  { text-align: right !important; }
+  .txt#{$infix}-center { text-align: center !important; }
+}
+//   }
+// }
+
+// Transformation
+
+.txt-lowercase  { text-transform: lowercase !important; }
+.txt-uppercase  { text-transform: uppercase !important; }
+.txt-capitalize { text-transform: capitalize !important; }
+.txt-lg-capitalize {
+  float: left;
+  letter-spacing: 0.5em;
+  line-height: 1.5;
+}
+// Weight and italics
+
+.txt-light   { font-weight: $font-weight-light !important; }
+.txt-lighter { font-weight: $font-weight-lighter !important; }
+.txt-normal  { font-weight: $font-weight-normal !important; }
+.txt-bold    { font-weight: $font-weight-bold !important; }
+.txt-bolder  { font-weight: $font-weight-bolder !important; }
+.txt-italic         { font-style: italic !important; }
+
+// Contextual colors
+
+.txt-white { color: $white !important; }
+.txt-black { color: $black !important; }
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant(".txt-#{$color}", $value, true);
+}
+
+// .txt-body { color: $body-color !important; }
+// .txt-muted { color: $text-muted !important; }
+
+.txt-black-50 { color: rgba($black, .5) !important; }
+.txt-white-50 { color: rgba($white, .5) !important; }
+
+// Misc
+
+.txt-hide {
+  @include text-hide($ignore-warning: true);
+}
+
+.txt-decoration-none { text-decoration: none !important; }
+
+.txt-break {
+  word-break: break-word !important; // IE & < Edge 18
+  overflow-wrap: break-word !important;
+}
+
+// Reset
+
+.txt-reset { color: inherit !important; }
+
+.txt-indent-zh{
+  text-indent: 2em;
+}
+.txt-convex{
+  padding-left: 2em;
+  text-indent: -2em;
+}

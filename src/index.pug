@@ -1,0 +1,40 @@
+include ./template/layout.pug
+mixin content()
+  #bg-main
+  .wrap.justify-center
+    .col-m-8.col-l-2
+      nav.menu.txt-center.px-l-15p.px-xl-20p
+        ul.menu-list.rounded.wrap.contents-5.contents-l-1.block-l.list-unstyled.gy-1
+          li.col.menu-list-item
+            button.btn.p-0
+              span.icon.ion-person
+              span.btn-title.hidden.inline-m ABOUT
+          li.col.menu-list-item
+            button.btn.p-0
+              span.icon.ion-android-list
+              span.btn-title.hidden.inline-m RESUME
+          li.col.menu-list-item
+            button.btn.p-0
+              span.icon.ion-paintbrush
+              span.btn-title.hidden.inline-m WORKS
+          li.col.menu-list-item
+            button.btn.p-0
+              span.icon.ion-chatbox-working
+              span.btn-title.hidden.inline-m BLOG
+          li.col.menu-list-item
+            button.btn.p-0
+              span.icon.ion-at
+              span.btn-title.hidden.inline-m CONTACT
+    .col-m-8.col-l-5
+      .bg-white
+        .bg-cover.vh-50.profile-photo(style='background-image:url("https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80");')
+
+        h2.txt-center Lorem, ipsum.
+
+
+
+
+doctype html
++layout('index')
+  +slot('body')
+    +content()

@@ -1,0 +1,12 @@
+%mask
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+.mask
+  @extend %mask
+@each $color in map-keys($mask-alpha)
+  @each $alpha in map-get($mask-alpha, $color)
+    .bg-#{$color}-a#{$alpha}
+      background-color: rgba(if($color == 'white', #fff, #000), $alpha / 10)

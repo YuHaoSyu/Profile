@@ -1,0 +1,7 @@
+// stylelint-disable declaration-no-important
+
+@each $value in $overflows {
+  .ovf-#{$value} { overflow: $value !important; }
+  .ovf-x-#{$value} { overflow-x: $value !important; }
+  .ovf-y-#{$value} { overflow-y: $value !important; }
+}

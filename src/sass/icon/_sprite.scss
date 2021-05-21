@@ -1,0 +1,19 @@
+$dash-b: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cdefs%3E%3ClinearGradient id='a' x2='1' y2='0'%3E%3Cstop stop-color='%23ddd' offset='0%25'/%3E%3Cstop stop-opacity='0' stop-color='%23fff' offset='100%25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' d='M0 120h150v150H0z'/%3E%3C/svg%3E" 150px 150px;
+$dash-img: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'/%3E" 150px 150px;
+$dash-l: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cdefs%3E%3ClinearGradient id='a' x2='0' y2='1'%3E%3Cstop stop-color='%23ddd' offset='0%25'/%3E%3Cstop stop-opacity='0' stop-color='%23fff' offset='100%25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' d='M0 0h30v150H0z'/%3E%3C/svg%3E" 150px 150px;
+$dash-t: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Cdefs%3E%3ClinearGradient id='a' x2='1' y2='0'%3E%3Cstop stop-opacity='0' stop-color='%23fff' offset='0%25'/%3E%3Cstop stop-color='%23ddd' offset='100%25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' d='M0 0h150v30H0z'/%3E%3C/svg%3E" 150px 150px;
+
+@mixin inline-svg($name) {
+	background: transparent url(nth($name, 1)) no-repeat 50% 50%;
+	background-size: 100%;
+	width: nth($name, 2);
+	height: nth($name, 3);
+}
+
+@function inline-svg-width($name) {
+	@return nth($name, 2);
+}
+
+@function inline-svg-height($name) {
+	@return nth($name, 3);
+}

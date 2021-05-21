@@ -1,0 +1,23 @@
+// stylelint-disable declaration-no-important
+
+// Width and height
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: #{$length + '%'} !important; }
+    .v#{$abbrev}-#{$size} { #{$prop}: #{$length}v#{$abbrev} !important; }
+  }
+}
+
+.max-w-100 { max-width: 100% !important; }
+.max-h-100 { max-height: 100% !important; }
+
+// Viewport additional helpers
+
+// .min-vw-0 { min-width: 0% !important; }
+// .min-vh-0 { min-height: 0% !important; }
+// .min-vw-100 { min-width: 100vw !important; }
+// .min-vh-100 { min-height: 100vh !important; }
+
+.w-auto { width: auto; }
+.h-auto { height: auto; }

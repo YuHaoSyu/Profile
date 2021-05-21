@@ -1,0 +1,39 @@
+.menu
+  &-list
+    background-color: $white
+  .icon
+    display: block
+    font-size: 1.25rem
+  .btn-title
+    display: none
+    font-size: 0.75rem
+    font-weight: $font-weight-bold
+  &-list-item
+    & + &
+      border: 1px solid transparent
+      border-width: var(--divide-border)
+      border-image: var(--border-img) 20% stretch
+.profile-photo
+  $width: 50%
+  position: relative
+  overflow: hidden
+  &:before,
+  &:after
+    content: ''
+    display: inline-block
+    position: absolute
+    bottom: 0
+    width: 55%
+    height: 100px
+    background-color: #fff
+  &:before
+    transform: translate(-10%, 70%) rotate(15deg)
+    // border-style: solid
+    // border-width: 200px 0 0 $width
+    // border-color: transparent transparent transparent #007bff
+  &:after
+    right: 0
+    transform: translate(10%, 70%) rotate(-15deg)
+    // border-style: solid
+    // border-width: 0 0 200px $width
+    // border-color: transparent transparent #007bff transparent

@@ -1,0 +1,54 @@
+// stylelint-disable declaration-no-important
+
+// Flex variation
+//
+// Custom styles for additional flex alignment options.
+//@each $breakpoint in map-keys($grid-breakpoints) {
+//  @include media-breakpoint-up($breakpoint) {
+//    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+$flex: true;
+@mixin flex($infix){
+    .from-left#{$infix}      { flex-direction: row !important; }
+    .from-top#{$infix}       { flex-direction: column !important; }
+    .to-left#{$infix}        { flex-direction: row-reverse !important; }
+    .to-top#{$infix}         { flex-direction: column-reverse !important; }
+    .wrap-0#{$infix}       { flex-wrap: nowrap !important; }
+    .wrap-1#{$infix}     { flex-wrap: wrap !important; }
+    .wrap-rev#{$infix}     { flex-wrap: wrap-reverse !important; }
+    .flex-0#{$infix}    { flex: 0 0 auto !important; }
+    .flex-1#{$infix}       { flex: 1 1 0 !important; }
+    .flex-fill#{$infix}    { flex: 1 1 auto !important; }
+    .grow-0#{$infix}       { flex-grow: 0 !important; }
+    .grow-1#{$infix}       { flex-grow: 1 !important; }
+    .shrink-0#{$infix}     { flex-shrink: 0 !important; }
+    .shrink-1#{$infix}     { flex-shrink: 1 !important; }
+
+    .justify#{$infix}-start   { justify-content: flex-start !important; }
+    .justify#{$infix}-end     { justify-content: flex-end !important; }
+    .justify#{$infix}-center  { justify-content: center !important; }
+    .justify#{$infix}-between { justify-content: space-between !important; }
+    .justify#{$infix}-around  { justify-content: space-around !important; }
+    .justify#{$infix}-evenly  { justify-content: space-evenly !important; }
+
+    .items#{$infix}-start    { align-items: flex-start !important; }
+    .items#{$infix}-end      { align-items: flex-end !important; }
+    .items#{$infix}-center   { align-items: center !important; }
+    .items#{$infix}-baseline { align-items: baseline !important; }
+    .items#{$infix}-stretch  { align-items: stretch !important; }
+
+    .content#{$infix}-start   { align-content: flex-start !important; }
+    .content#{$infix}-end     { align-content: flex-end !important; }
+    .content#{$infix}-center  { align-content: center !important; }
+    .content#{$infix}-between { align-content: space-between !important; }
+    .content#{$infix}-around  { align-content: space-around !important; }
+    .content#{$infix}-evenly  { align-content: space-evenly !important; }
+    .content#{$infix}-stretch { align-content: stretch !important; }
+
+    .self#{$infix}-auto     { align-self: auto !important; }
+    .self#{$infix}-start    { align-self: flex-start !important; }
+    .self#{$infix}-end      { align-self: flex-end !important; }
+    .self#{$infix}-center   { align-self: center !important; }
+    .self#{$infix}-baseline { align-self: baseline !important; }
+    .self#{$infix}-stretch  { align-self: stretch !important; }
+  }
+//}

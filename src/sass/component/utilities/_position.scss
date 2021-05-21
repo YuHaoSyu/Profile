@@ -1,0 +1,37 @@
+// stylelint-disable declaration-no-important
+
+// Common values
+@each $position in $positions {
+  $abbr: $position;
+  @if ($position == 'relative' or $position =='absolute') {
+    $abbr: str-slice($position, 0, 3);
+  }
+  .#{$abbr} { position: $position !important; }
+}
+
+// Shorthand
+%fixed{
+  @extend .fixed;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+.fixed-top {
+  @extend %fixed;
+  top: 0;
+}
+
+.fixed-bottom {
+  @extend %fixed;
+  bottom: 0;
+}
+
+.sticky-top {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+    z-index: $zindex-sticky;
+  }
+}
+
+$startup-pos: true

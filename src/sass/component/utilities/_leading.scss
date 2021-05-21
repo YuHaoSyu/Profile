@@ -1,0 +1,8 @@
+$leading: true;
+@mixin leading($infix){
+  .leading#{$infix}-none           { line-height: 1 !important; }
+  .leading#{$infix}-tight          { line-height: 1.25 !important; }
+  .leading#{$infix}-normal         { line-height: 1.5 !important; }
+  // .leading#{$infix}-relaxed        { line-height: 1.75 !important; }
+  // .leading#{$infix}-loose          { line-height: 2 !important; }
+}
